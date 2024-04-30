@@ -21,8 +21,8 @@ def main():
     credit_score = st.number_input("Credit Score", 0, 1000)
     geography  = st.selectbox("Geographical Location", ["Germany", "Spain", "France"])
     gender=st.radio("Gender", ["Male","Female"])
-    tenure=st.number_input("How long have you been a customer (in years)", 0,15)
     age = st.number_input("Age", 0, 100)
+    tenure=st.number_input("How long have you been a customer (in years)", 0,15)
     balance = st.number_input('Balance Amount', 0, 1000000)
     NumOfProducts = st.number_input("Number of bank products you hold", 0, 15)
     options = {"Yes": 1, "No": 0}
@@ -31,10 +31,10 @@ def main():
     EstimatedSalary=st.number_input("Estimation of your salary", 0,1000000)
     
     
-    data = {'Age': int(age), 'Credit Score' : int(credit_score), 'Tenure':int(tenure),'Gender': str(gender), 'Surname':str(surname),'Geography':str(geography),
-        'Balance': int(balance), 'NumOfProducts':int(NumOfProducts),
-        'HasCrCard':int(HasCrCard), 'IsActiveMember': int(IsActiveMember),
-        'EstimatedSalary':int(EstimatedSalary)}
+    data = {'Surname' : str(surname), 'Credit Score' : int(credit_score), 'Geography':str(geography),
+            'Gender':str(gender), 'Age':int(age), 'Tenure':int(tenure), 'Balance':float(balance),
+            'NumOfProducts':int(NumOfProducts), 'HasCrCard':int(HasCrCard), 'IsActiveMember':int(IsActiveMember),
+            'EstimatedSalary':float(EstimatedSalary)}
     
     df=pd.DataFrame([list(data.values())], columns= list(data.keys()))
 
