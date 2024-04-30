@@ -21,10 +21,10 @@ def main():
     credit_score = st.number_input("Credit Score", 0, 1000)
     geography  = st.selectbox("Geographical Location", ["Germany", "Spain", "France"])
     gender=st.radio("Gender", ["Male","Female"])
-    tenure=st.number_input("How long have you been a customer (in years)", 0,10)
+    tenure=st.number_input("How long have you been a customer (in years)", 0,15)
     age = st.number_input("Age", 0, 100)
     balance = st.number_input('Balance Amount', 0, 1000000)
-    NumOfProducts = st.number_input("Number of bank products you hold")
+    NumOfProducts = st.number_input("Number of bank products you hold", 0, 15)
     options = {"Yes": 1, "No": 0}
     HasCrCard = options[st.radio("Do you have a credit card from this bank?", options.keys())]
     IsActiveMember = options[st.radio("Do you have an active membership status with this bank?", options.keys())]
