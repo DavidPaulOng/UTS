@@ -28,7 +28,7 @@ def main():
     options = {"Yes": 1, "No": 0}
     HasCrCard = options[st.radio("Do you have a credit card from this bank?", options.keys())]
     IsActiveMember = options[st.radio("Do you have an active membership status with this bank?", options.keys())]
-    EstimatedSalary=st.number_input("Estimation of your salary", 0,1000000)
+    EstimatedSalary=st.number_input("Estimation of your salary", 0,1000000,  step=0.2)
     
     
     data = {'Surname' : str(surname), 'Credit Score' : int(credit_score), 'Geography':str(geography),
