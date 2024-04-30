@@ -25,9 +25,8 @@ def main():
     age = st.number_input("Age", 0, 100)
     balance = st.number_input('Balance Amount', 0, 1000000)
     NumOfProducts = st.number_input("Number of bank products you hold")
-    options = {"Yes": 1, "No": 0}
-    HasCrCard = options[st.radio("Do you have a credit card from this bank?", options.keys())]
-    IsActiveMember = options[st.radio("Do you have an active membership status with this bank?", options.keys())]
+    HasCrCard = 1
+    IsActiveMember = 1
     EstimatedSalary=st.number_input("Estimation of your salary", 0,1000000)
     
     
@@ -59,7 +58,10 @@ def main():
     if st.button('Make Prediction'):
         data=df      
         result = make_prediction(data)
-        st.success(f"prediction: {result}")
+        if(result == 0):
+            st.success('Will Churn')
+        else:
+            st.success('Will Not Churn')
 
 def make_prediction(data):
     input_array = np.array(data).reshape(1, -1)
